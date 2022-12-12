@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { increase, decrease } from './store'
+import { increase, decrease } from './store/counterSlice'
 
 const Counter = () => {
     // const [count, setCount] = useState(0)
