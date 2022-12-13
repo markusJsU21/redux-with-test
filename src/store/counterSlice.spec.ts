@@ -1,4 +1,4 @@
-import reducer, {increase, decrease} from './counterSlice'
+import reducer, {increase, decrease, increaseByX} from './counterSlice'
 
 describe('counterSlice', () => {
 
@@ -18,6 +18,18 @@ describe('counterSlice', () => {
         const previousState = { count: 5 };
         expect(reducer(previousState, decrease())).toEqual({
             count: 4
+        })
+    })
+    it('should increase state count by X amount', () => {
+        const previousState = { count: 5 };
+        expect(reducer(previousState, increaseByX(5))).toEqual({
+            count: 10
+        })
+    })
+    it('should decrease state count by X amount when passed a negative number', () => {
+        const previousState = { count: 5 };
+        expect(reducer(previousState, increaseByX(-5))).toEqual({
+            count: 0
         })
     })
 })

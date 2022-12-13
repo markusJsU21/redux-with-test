@@ -9,9 +9,12 @@ const counterSlice = createSlice ({
             },
         decrease: state => {
             state.count--
+           },
+           increaseByX(state, action){
+            state.count += action.payload
            }
     }
 })
 
-export const { increase, decrease } = counterSlice.actions
+export const { increase, decrease, increaseByX } = counterSlice.actions
 export default counterSlice.reducer
